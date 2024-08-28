@@ -11,7 +11,7 @@ function Header(props){
     <div className='text-xl h-10 flex bg-blue-950 content-center'>
       <div className='w-[100px] text-white text-center leading-10 pl-[15px]'>CASPER</div>
       <div className='h-full w-5 text-right'>
-        <div className='w-full h-3'></div>
+        <div className='w-full h-3'> </div> 
         <div className='w-full h-4 content-center rounded-md bg-gray-300'><img src={navImage} className='w-3 h-2 m-auto'></img></div>
         <div className='w-full h-3'></div>
       </div>
