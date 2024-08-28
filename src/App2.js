@@ -105,7 +105,7 @@ function App() {
     contextControl = <>
       <li><a href={'/update/'+id} onClick={event=>{
         event.preventDefault();
-        setMode('UPDATE');
+        setMode('UPDATEtest');
         }}>Update</a></li>
         <li><input type='button' value="Delete" onClick={()=>{
           const newTopics = []
