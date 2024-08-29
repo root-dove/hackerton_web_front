@@ -1,26 +1,19 @@
 import './App.css';
-import { useState } from 'react';
+import {Route, Routes} from "react-router-dom";
 
+import Layout from './components/Layout';
 import Article from './components/Article';
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Dropdown from './components/Dropdown';
-import SideBar from './components/SideBar';
-
+import LogPage from './routes/network/LogPage';
+import LogAllPage from './routes/network/LogAllPage';
 
 function App(){ 
   
   return (
-    <div className="App w-[1920px] h-[945px] flex bg-gray-200">
-      <div className='w-[259px] left-side'>
-        <SideBar></SideBar>
-      </div>
-      <div className='w-full h-full'>
-        
-        
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout><Article/></Layout>}/>
+      <Route path='/log' element={<Layout><LogPage/></Layout>}/>
+      <Route path='/logAll' element={<Layout><LogAllPage/></Layout>}/>
+    </Routes>
   );
 }
-
 export default App;
