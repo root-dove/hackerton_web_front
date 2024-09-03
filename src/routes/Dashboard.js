@@ -8,6 +8,7 @@ import WorldMapPing from '../components/WorldMapPing';
 import DoughnutChart from '../components/DoughnutChart';
 import DoughnutChart2 from '../components/DoughnutChart2';
 import StictChart from '../components/StictChart';
+import LogShow from '../components/LogShow';
 
 function Dashboard(){
   return (
@@ -32,8 +33,8 @@ function Dashboard(){
               </div>
             </div>
         </div>
-        <div className='bg-white w-[800px]'>
-
+        <div className='bg-white w-[1612px] h-[250px] mt-3'>
+          <LogShow/>
         </div>
         
     </div>
