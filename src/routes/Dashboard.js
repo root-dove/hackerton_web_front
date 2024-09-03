@@ -5,6 +5,9 @@ import LineChartType2 from '../components/LineChartType2';
 import LineChartType3 from '../components/LineChartType3';
 import WorldMap from '../components/WorldMap';
 import WorldMapPing from '../components/WorldMapPing';
+import DoughnutChart from '../components/DoughnutChart';
+import DoughnutChart2 from '../components/DoughnutChart2';
+import StictChart from '../components/StictChart';
 
 function Dashboard(){
   return (
@@ -19,7 +22,14 @@ function Dashboard(){
               <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Contry Traffic</p></div>
               <WorldMap/>
             </div>
-            <div className='bg-white w-[600px] h-full ml-3'>
+            <div className='bg-white w-[600px] h-full ml-3 flex'>
+              <div className='w-[360px]'>
+                <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Top Traffic</p></div>
+                <DoughnutChart2/>
+              </div>
+              <div className='w-full'>
+                <StictChart/>
+              </div>
             </div>
         </div>
         <div className='bg-white w-[800px]'>

@@ -1,0 +1,20 @@
+[
+    {
+      "label": "Label 1",
+      "value": 55,
+      "color": "rgba(0, 43, 73, 1)",
+      "cutout": "50%"
+    },
+    {
+      "label": "Label 2",
+      "value":15,
+      "color": "rgba(0, 103, 160, 1)",
+      "cutout": "50%"
+    },
+    {
+      "label": "Label 3",
+      "value": 80,
+      "color": "rgba(83, 217, 217, 1)",
+      "cutout": "50%"
+    }
+]
