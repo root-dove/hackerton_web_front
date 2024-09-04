@@ -10,7 +10,7 @@ const WorldMap = () => {
     return (
         <div className='w-[1000px] h-auto'>
             <div className='w-[800px] h-auto m-auto'>
-                <div className='w-auto h-[336px] bg-[url("./img/worldmap2.jpg")] static' style={{backgroundSize: "800px 336px" }}>
+                <div className='w-auto h-[336px] bg-[url("./img/worldmap2.jpg")] relative' style={{backgroundSize: "800px 336px" }}>
                     <WorldMapPing/>
                 </div>
             </div>
