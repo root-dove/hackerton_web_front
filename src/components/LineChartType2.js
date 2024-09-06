@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from "react";
 import { Bar, Doughnut, Line} from "react-chartjs-2"
 import { Chart } from 'react-chartjs-2'
 import "chart.js/auto"
@@ -7,23 +7,49 @@ import revenueData from "../data/revenueData.json"
 import sourceData from "../data/sourceData.json"
 
 const LineChartType2 = () => {
+
+    const [data, SetData] = useState(revenueData);
+
+    const setMenuValue = (props) => {
+      let newArr = [...data];
+      newArr.push(props)
+      SetData(newArr);
+    }
+
+    const test = {
+      "label" : "test",
+      "revenue" : 3000,
+      "cost" : 30000
+    }
     
+
+    // const sid = setInterval(() => {
+    //   const test = {
+    //     "label" : "test",
+    //     "revenue" : Math.floor(Math.random()*100000),
+    //     "cost" : Math.floor(Math.random()*100000)
+    //   }
+    //   setMenuValue(test);
+    //   console.log(data)
+    // }, 1000);
+    
+
     return (
         <div className="chart w-[1556px] m-auto">
       <div className="dataCard revenueCard h-52">
         <Line
           data={{
-            labels: revenueData.map((data) => data.label),
+            labels: data.map((data) => data.label),
             datasets: [
               {
                 label: "Revenue",
-                data: revenueData.map((data) => data.revenue),
+                data: data.map((data) => data.revenue),
                 backgroundColor: "#064FF0",
                 borderColor: "#064FF0",
               },
               {
                 label: "Cost",
-                data: revenueData.map((data) => data.cost),
+                data: data.map((data) => data.cost),
                 backgroundColor: "#FF3030",
                 borderColor: "#FF3030",
               },

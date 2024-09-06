@@ -28,12 +28,12 @@ const LogShow = () => {
   return (
     <div>
         <div className='w-auto h-16 font-bold ml-7 mt-4 text-2xl block content-center'><p>Top Traffic</p></div>
-        <div className='flex h-8 align-bottom text-center'>
-          <div className='text-[15px] leading-[40px] w-[160px] ml-2'>Date</div>
-          <div className='text-[15px] leading-[40px] w-[160px]'>NC</div>
-          <div className='text-[15px] leading-[40px] w-[160px]'>IP</div>
-          <div className='text-[15px] leading-[40px] w-[520px]'>Vulnable Content</div>
-          <div className='text-[15px] leading-[40px] w-[420px]'>Payload</div>
+        <div className='flex h-8 align-bottom text-center border-t-4'>
+          <div className='text-[15px] leading-[25px] w-[160px] ml-2'>Date</div>
+          <div className='text-[15px] leading-[25px] w-[160px]'>NC</div>
+          <div className='text-[15px] leading-[25px] w-[160px]'>IP</div>
+          <div className='text-[15px] leading-[25px] w-[520px]'>Vulnable Content</div>
+          <div className='text-[15px] leading-[25px] w-[420px]'>Payload</div>
         </div>
         {logList}
     </div>

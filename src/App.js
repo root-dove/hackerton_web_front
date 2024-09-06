@@ -9,7 +9,8 @@ import LogAllPage from './routes/network/LogAllPage';
 import Dashboard from './routes/Dashboard';
 import PolicyList from './components/Policy/PolicyList';
 import Rule from './components/Policy/Rule';
-
+import Status from './components/Network/Status';
+import Tools from './components/Network/Tools';
 
 function App(){ 
   
@@ -23,6 +24,9 @@ function App(){
 
       <Route path='/Policy/PolicyList' element={<Layout><PolicyList/></Layout>}/>
       <Route path='/Policy/Rule' element={<Layout><Rule/></Layout>}/>
+
+      <Route path='/Network/Status' element={<Layout><Status/></Layout>}/>
+      <Route path='/Network/Tools' element={<Layout><Tools/></Layout>}/>
     </Routes>
   );
 }
