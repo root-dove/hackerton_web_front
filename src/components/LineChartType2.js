@@ -12,6 +12,7 @@ const LineChartType2 = () => {
 
     const setMenuValue = (props) => {
       let newArr = [...data];
+      newArr.pop(0);
       newArr.push(props)
       SetData(newArr);
     }
