@@ -22,9 +22,10 @@ function Dashboard() {
   return (
     <div className='w-full h-full'>
       <div className='h-auto w-[1612px] bg-white'>
-        <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Traffic</p></div>
-        <LineChartType2 />
-        <div className='w-auto h-2'></div>
+        <div className="flex h-8">
+          <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Traffic</p></div>
+        </div>
+        <div className='w-auto h-full'><LineChartType2 /></div>
       </div>
       <div className='flex h-96 w-full mt-3'>
         <div className='bg-white w-[1000px] h-full'>
