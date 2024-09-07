@@ -20,7 +20,7 @@ const WorldMap = () => {
             },
           })
           .size(1)
-          .shape('greatcircle')
+          .shape('arc3d')
           .animate({
             enable: true,
             interval: 0.1,
