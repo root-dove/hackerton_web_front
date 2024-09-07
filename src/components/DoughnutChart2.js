@@ -61,7 +61,7 @@ const DoughnutChart2 = () => {
             setChartData(prevData =>
                 prevData.map(item => ({
                     ...item,
-                    value: Math.max(0, Math.min(100, item.value + (Math.random() - 0.45) * 5))
+                    value: Math.max(0, Math.min(100, item.value + (Math.random() - 0.5) * 5))
                 }))
             );
         }, 1000);
