@@ -7,6 +7,8 @@ const WorldMap = () => {
 
   useEffect(() => {
     if (!mapRef.current) return;
+    // check already map exist
+    if (mapRef.current.children.length) return;
 
     const scene = new Scene({
       id: mapRef.current,

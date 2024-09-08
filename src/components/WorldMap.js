@@ -20,7 +20,7 @@ const WorldMap = () => {
             },
           })
           .size(1)
-          .shape('greatcircle')
+          .shape('arc3d')
           .animate({
             enable: true,
             interval: 0.1,
@@ -42,8 +42,10 @@ const WorldMap = () => {
       style={{ height: '300px' }} 
       onSceneLoaded={onSceneLoaded}
       mapStyle="dark"
-      center={[107.77791556935472, 35.443286920228644]}
-      zoom={2.9142882493605033}
+      mapOptions={{
+        zoom: 3,
+        center: [107.77791556935472, 35.443286920228644],
+      }}
       token="pk.eyJ1IjoiaHVpMTYwMSIsImEiOiJja2U5ejRvZWcweGpuMnhweDhlNnhocjcxIn0.ZbppeoZobKSami5SvfN_jA"
     >
       <h2 style={{ position: 'absolute', left: '10px', color: 'white' }}>Animated Line Map</h2>
