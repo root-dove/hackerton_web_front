@@ -28,7 +28,7 @@ const LineChartType2 = () => {
 
   return (
     <div className="chart w-[1556px] m-auto">
-      <div className="dataCard revenueCard h-52">
+      <div className="dataCard revenueCard h-72">
         <Line
           data={{
             labels: data.map((item) => item.label),

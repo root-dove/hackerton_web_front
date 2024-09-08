@@ -56,7 +56,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className='bg-white w-[1612px] h-fit mt-3'>
+      <div className='bg-white w-[1612px] h-max mt-3'>
         <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Traffic</p></div>
         <LogShow />
       </div>
