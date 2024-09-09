@@ -34,13 +34,13 @@ const LineChartType2 = () => {
             labels: data.map((item) => item.label),
             datasets: [
               {
-                label: "Revenue",
+                label: "In Bound",
                 data: data.map((item) => item.revenue),
                 backgroundColor: "#064FF0",
                 borderColor: "#064FF0",
               },
               {
-                label: "Cost",
+                label: "Out Bound",
                 data: data.map((item) => item.cost),
                 backgroundColor: "#FF3030",
                 borderColor: "#FF3030",
