@@ -7,6 +7,8 @@ const WorldMap = () => {
 
   useEffect(() => {
     if (!mapRef.current) return;
+    // check already map exist
+    if (mapRef.current.children.length) return;
 
     const scene = new Scene({
       id: mapRef.current,
@@ -30,7 +32,7 @@ const WorldMap = () => {
           specularRatio: 0.1,
         },
       })
-      .animate(true);
+      // .animate(true);
 
     const atomLayer = new EarthLayer().color('#2E8AE6').shape('atomSphere');
 
@@ -46,6 +48,14 @@ const WorldMap = () => {
       fetch('https://gw.alipayobjects.com/os/bmw-prod/20a69b46-3d6d-4ab5-b8b5-150b6aa52c88.json')
         .then((res) => res.json())
         .then((flydata) => {
+          // invert coord
+          flydata = flydata.map((item) => {
+            return {
+              coord: [
+                item.coord[1], item.coord[0]
+              ],
+            };
+          });
           const flyLine = new LineLayer({ blend: 'normal' })
             .source(flydata, {
               parser: {
@@ -53,9 +63,9 @@ const WorldMap = () => {
                 coordinates: 'coord',
               },
             })
-            .color('#b97feb')
+            .color('#ff0000aa')
             .shape('arc3d')
-            .size(0.5)
+            .size(0.2)
             .active(true)
             .animate({
               interval: 2,
@@ -69,7 +79,7 @@ const WorldMap = () => {
           scene.addLayer(flyLine);
         });
 
-      earthlayer.setEarthTime(4.0);
+      earthlayer.setEarthTime(0.0);
     });
 
     return () => {

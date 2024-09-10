@@ -1,62 +1,52 @@
-import React,{useState} from "react";
-import { Bar, Doughnut, Line} from "react-chartjs-2"
-import { Chart } from 'react-chartjs-2'
-import "chart.js/auto"
+import React, { useState, useEffect } from "react";
+import { Line } from "react-chartjs-2";
+import "chart.js/auto";
 
-import revenueData from "../data/revenueData.json"
-import sourceData from "../data/sourceData.json"
+import revenueData from "../data/revenueData.json";
 
 const LineChartType2 = () => {
+  const [data, setData] = useState(revenueData);
 
-    const [data, SetData] = useState(revenueData);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setData(prevData => {
+        const newEntry = {
+          label: `${parseInt(prevData[prevData.length - 1].label, 10) + 1}`,
+          revenue: Math.max(0, prevData[prevData.length - 1].revenue + Math.floor(Math.random() * 50000) - 25000),
+          cost: Math.max(0, prevData[prevData.length - 1].cost + Math.floor(Math.random() * 50000) - 25000),
+        };
+        if (prevData.length >= 100) {
+          prevData.shift();
+          return [...prevData, newEntry];
+        }
+        return [...prevData, newEntry];
+      });
+    }, 1000);
 
-    const setMenuValue = (props) => {
-      let newArr = [...data];
-      newArr.pop(0);
-      newArr.push(props)
-      SetData(newArr);
-    }
+    return () => clearInterval(interval);
+  }, []);
 
-    const test = {
-      "label" : "test",
-      "revenue" : 3000,
-      "cost" : 30000
-    }
-    
-
-    // const sid = setInterval(() => {
-    //   const test = {
-    //     "label" : "test",
-    //     "revenue" : Math.floor(Math.random()*100000),
-    //     "cost" : Math.floor(Math.random()*100000)
-    //   }
-    //   setMenuValue(test);
-    //   console.log(data)
-    // }, 1000);
-    
-
-    return (
-        <div className="chart w-[1556px] m-auto">
-      <div className="dataCard revenueCard h-52">
+  return (
+    <div className="chart w-[1556px] m-auto">
+      <div className="dataCard revenueCard h-72">
         <Line
           data={{
-            labels: data.map((data) => data.label),
+            labels: data.map((item) => item.label),
             datasets: [
               {
-                label: "Revenue",
-                data: data.map((data) => data.revenue),
+                label: "In Bound",
+                data: data.map((item) => item.revenue),
                 backgroundColor: "#064FF0",
                 borderColor: "#064FF0",
               },
               {
-                label: "Cost",
-                data: data.map((data) => data.cost),
+                label: "Out Bound",
+                data: data.map((item) => item.cost),
                 backgroundColor: "#FF3030",
                 borderColor: "#FF3030",
               },
             ],
           }}
-        //   width={"500%"}
           options={{
             responsive: true,
             maintainAspectRatio: false,
@@ -74,7 +64,7 @@ const LineChartType2 = () => {
         />
       </div>
     </div>
-    )
-}
+  );
+};
 
-export default LineChartType2
+export default LineChartType2;

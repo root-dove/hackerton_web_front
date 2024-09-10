@@ -16,14 +16,8 @@ const PolicyItem=(props)=>{
             <li className='w-[200px] h-full  content-center'>
                 <p className='table m-auto text-lg font-black'>{props.sip}</p>
             </li>
-            <li className='w-auto h-full  content-center'>
-                <div className={`w-[30px] h-[10px] table m-auto text-lg font-black rounded-2xl hover:bg-green-700` } style={{ backgroundColor : props.status }}></div>
-            </li>
             <li className='w-[200px] h-full  content-center'>
                 <p className='table m-auto text-lg font-black'>{props.dip}</p>
-            </li>
-            <li className='w-[15px] h-full  content-center'>
-                
             </li>
             <li className='w-[610px] h-full  content-center'>
                 <p className='table m-auto text-lg font-black'>{props.descript}</p>
@@ -49,27 +43,27 @@ const PolicyList = () => {
                 <SearchBar/>
             </div>
             <div className='w-full h-[800px] bg-gray-200 rounded-lg shadow-2xl '>
-                <ol className='w-[1550px] h-14 border-b-2 border-4 border-b-gray-200 m-auto flex text-2xl font-bold content-center'>
-                    <li className='w-[80px] h-full  content-center ml-[40px]'>
+                <ol className='w-[1530px] h-14 border-b-2 border-4 border-b-gray-200 m-auto flex text-2xl font-bold content-center'>
+                    <li className='w-[120px] h-full  content-center text-center'>
                         <p className='border-r-2 border-gray-300'>No.</p>
                     </li>
-                    <li className='w-[110px] h-full  content-center ml-[40px]'>
+                    <li className='w-[160px] h-full  content-center text-center'>
                         <p className='border-r-2 border-gray-300'>Status</p>
                     </li>
-                    <li className='w-36 h-full  content-center ml-[80px]'>
+                    <li className='w-[200px] h-full  content-center text-center'>
                         <p className='border-r-2 border-gray-300'>SIP</p>
                     </li>
-                    <li className='w-36 h-full  content-center ml-[80px]'>
+                    <li className='w-[200px] h-full  content-center text-center'>
                         <p className='border-r-2 border-gray-300'>DIP</p>
                     </li>
-                    <li className='w-[400px] h-full  content-center ml-[210px]'>
+                    <li className='w-[610px] h-full  content-center text-center'>
                         <p className='border-r-2 border-gray-300'>DESCRIPTION</p>
                     </li>
-                    <li className='w-auto h-full  content-center ml-[80px]'>
+                    <li className='w-[200px] h-full  content-center text-center'>
                         <p className=''>ETC</p>
                     </li>
                 </ol>
-                <ol className='w-[1570px] h-[650px] m-auto overflow-auto'>
+                <ol className='w-[1570px] h-[700px] m-auto overflow-auto'>
                 {
                     data.map((t,i)=>(
                         <PolicyItem key={i} sip={t.sip} dip={t.dip} descript={t.descript} id={t.id} status={t.status}/>
