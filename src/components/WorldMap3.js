@@ -32,7 +32,7 @@ const WorldMap = () => {
           specularRatio: 0.1,
         },
       })
-      // .animate(true);
+    // .animate(true);
 
     const atomLayer = new EarthLayer().color('#2E8AE6').shape('atomSphere');
 

@@ -4,9 +4,11 @@ import { LineLayer, Scene } from '@antv/l7';
 
 const WorldMap = () => {
   const onSceneLoaded = (scene) => {
-    fetch('https://gw.alipayobjects.com/os/rmsportal/UEXQMifxtkQlYfChpPwT.txt')
+    fetch('/attackData.txt')
       .then((res) => res.text())
       .then((data) => {
+        const realData = data;
+        data = data.split('\n').filter((line, index) => index === 0 || Math.random() > 0.90).join('\n');
         const layer = new LineLayer({
           blend: 'normal',
         })
@@ -20,7 +22,7 @@ const WorldMap = () => {
             },
           })
           .size(1)
-          .shape('arc3d')
+          .shape('arc')
           .animate({
             enable: true,
             interval: 0.1,
@@ -32,6 +34,9 @@ const WorldMap = () => {
             opacity: 0.8,
           });
         scene.addLayer(layer);
+        setInterval(() => {
+          layer.setData(realData.split('\n').filter((line, index) => index === 0 || Math.random() > 0.90).join('\n'));
+        }, 60000);
       });
     };
     if(!window.mapboxgl) window.mapboxgl = {};
@@ -44,11 +49,10 @@ const WorldMap = () => {
       mapStyle="dark"
       mapOptions={{
         zoom: 3,
-        center: [107.77791556935472, 35.443286920228644],
+        center: [127.51424646, 36.56344139],
       }}
       token="pk.eyJ1IjoiaHVpMTYwMSIsImEiOiJja2U5ejRvZWcweGpuMnhweDhlNnhocjcxIn0.ZbppeoZobKSami5SvfN_jA"
     >
-      <h2 style={{ position: 'absolute', left: '10px', color: 'white' }}>Animated Line Map</h2>
     </LarkMap>
   );
 };

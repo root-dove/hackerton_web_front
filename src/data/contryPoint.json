@@ -1,47 +1,47 @@
 [
     {
-        "label" : "KR",
-        "x" : "192px",
-        "y" : "628px"
+        "label": "KR",
+        "x": "192px",
+        "y": "628px"
     },
     {
-        "label" : "JP",
-        "x" : "196px",
-        "y" : "641px"
+        "label": "JP",
+        "x": "196px",
+        "y": "641px"
     },
     {
-        "label" : "CN",
-        "x" : "208px",
-        "y" : "616px"
+        "label": "CN",
+        "x": "208px",
+        "y": "616px"
     },
     {
-        "label" : "MN",
-        "x" : "165px",
-        "y" : "575px"
+        "label": "MN",
+        "x": "165px",
+        "y": "575px"
     },
     {
-        "label" : "RU",
-        "x" : "115px",
-        "y" : "555px"
+        "label": "RU",
+        "x": "115px",
+        "y": "555px"
     },
     {
-        "label" : "IN",
-        "x" : "230px",
-        "y" : "530px"
+        "label": "IN",
+        "x": "230px",
+        "y": "530px"
     },
     {
-        "label" : "UA",
-        "x" : "155px",
-        "y" : "435px"
+        "label": "UA",
+        "x": "155px",
+        "y": "435px"
     },
     {
-        "label" : "GB",
-        "x" : "145px",
-        "y" : "365px"
+        "label": "GB",
+        "x": "145px",
+        "y": "365px"
     },
     {
-        "label" : "MN",
-        "x" : "165px",
-        "y" : "575px"
+        "label": "MN",
+        "x": "165px",
+        "y": "575px"
     }
 ]

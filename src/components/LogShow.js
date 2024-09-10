@@ -6,9 +6,9 @@ const LogShow = () => {
     const generateRandomLog = () => {
         // YY-MM-DD HH:MM:SS.ms
         const date = new Date().toISOString().slice(0, 19).replace('T', ' ').slice(2) + '.' + String((new Date().getMilliseconds() + Math.floor(Math.random() * 100)) % 1000).padStart(3, '0');
-        const nc = Math.random() < 0.5 ? 'KR' : 'China';
+        const nc = Math.random() < 0.2 ? 'KR' : 'CN';
         const ip = `${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
-        const vulnerability = Math.random() < 0.5 ? `CVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}` : `KVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}`;
+        // const vulnerability = Math.random() < 0.5 ? `CVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}` : `KVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}`;
         const randomPayloads = [
             `id=${Math.floor(Math.random() * 100)}`,
             `name=${Math.random() < 0.5 ? 'admin' : 'user'}`,
@@ -24,7 +24,7 @@ const LogShow = () => {
             `Host: ${Math.random() < 0.5 ? '127.0.0.1' : 'localhost'}`,
         ];
         const payload = randomPayloads[Math.floor(Math.random() * randomPayloads.length)];
-        return { date, nc, ip, vulnerability, payload };
+        return { date, nc, ip/*, vulnerability*/, payload };
     }
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const LogShow = () => {
                 <div className='text-[15px] leading-[25px] w-[160px] ml-2'>Date</div>
                 <div className='text-[15px] leading-[25px] w-[160px]'>NC</div>
                 <div className='text-[15px] leading-[25px] w-[160px]'>IP</div>
-                <div className='text-[15px] leading-[25px] w-[520px]'>Vulnable Content</div>
+                {/* <div className='text-[15px] leading-[25px] w-[520px]'>Vulnable Content</div> */}
                 <div className='text-[15px] leading-[25px] w-[420px]'>Payload</div>
             </div>
             <div className='h-max overflow-auto'>
@@ -56,7 +56,7 @@ const LogShow = () => {
                         <div className='text-[15px] w-[160px] ml-2'>{log.date}</div>
                         <div className='text-[15px] w-[160px]'>{log.nc}</div>
                         <div className='text-[15px] w-[160px]'>{log.ip}</div>
-                        <div className='text-[15px] w-[520px]'>{log.vulnerability}</div>
+                        {/* <div className='text-[15px] w-[520px]'>{log.vulnerability}</div> */}
                         <div className='text-[15px] w-[420px]'>{log.payload}</div>
                     </div>
                 ))}

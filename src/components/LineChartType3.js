@@ -1,9 +1,9 @@
 import { ResponsiveLine } from "@nivo/line";
 import { mockLineData as data } from "../data/mockData";
 
-const LineChartType3 = ({isDashboard = false }) => {
+const LineChartType3 = ({ isDashboard = false }) => {
   const datas = [];
-  
+
   return (
     <ResponsiveLine
       data={data}

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 
-import LineChart from '../components/LineChart';
 import LineChartType2 from '../components/LineChartType2';
-import LineChartType3 from '../components/LineChartType3';
 import WorldMap from '../components/WorldMap';
 import WorldMap3 from "../components/WorldMap3";
-import WorldMapPing from '../components/WorldMapPing';
-import DoughnutChart from '../components/DoughnutChart';
 import DoughnutChart2 from '../components/DoughnutChart2';
 import StictChart from '../components/StictChart';
 import LogShow from '../components/LogShow';
@@ -56,8 +52,8 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className='bg-white w-[1612px] h-max mt-3'>
-        <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Traffic</p></div>
+      <div className='bg-white w-[1000px] h-max mt-3'>
+        <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Threat</p></div>
         <LogShow />
       </div>
 
