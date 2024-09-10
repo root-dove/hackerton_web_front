@@ -11,7 +11,6 @@ import PolicyList from './components/Policy/PolicyList';
 import AddPolicy from './components/Policy/AddPolicy'
 import Status from './components/Network/Status';
 import Tools from './components/Network/Tools';
-import Status2 from './components/Network/Status copy'
 
 function App(){ 
   
