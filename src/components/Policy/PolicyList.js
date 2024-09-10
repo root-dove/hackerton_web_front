@@ -17,7 +17,7 @@ const PolicyItem=(props)=>{
                 <p className='table m-auto text-lg font-black'>{props.sip}</p>
             </li>
             <li className='w-auto h-full  content-center'>
-                <div className={`w-[30px] h-[10px] table m-auto text-lg font-black rounded-2xl hover:bg-green-700` }></div>
+                <div className={`w-[30px] h-[10px] table m-auto text-lg font-black rounded-2xl hover:bg-green-700` } style={{ backgroundColor : props.status }}></div>
             </li>
             <li className='w-[200px] h-full  content-center'>
                 <p className='table m-auto text-lg font-black'>{props.dip}</p>
@@ -69,7 +69,7 @@ const PolicyList = () => {
                         <p className=''>ETC</p>
                     </li>
                 </ol>
-                <ol className='w-[1570px] h-[700px] m-auto overflow-auto'>
+                <ol className='w-[1570px] h-[650px] m-auto overflow-auto'>
                 {
                     data.map((t,i)=>(
                         <PolicyItem key={i} sip={t.sip} dip={t.dip} descript={t.descript} id={t.id} status={t.status}/>
