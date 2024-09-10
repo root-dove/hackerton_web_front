@@ -12,14 +12,6 @@ export default function Header() {
         setMenu(newArr);
     }
     
-    // function ToastMessage(){
-    //     toast("단말기 10.100.10.184 에서 이상 행위 탐지");
-    // }
-
-    // const sid = setTimeout(ToastMessage, 3000);
-
-    // const timeoutId = setTimeout(() =>  toast("단말기 10.100.10.184 에서 이상 행위 탐지"), 5000);
-    // clearTimeout(timeoutId);
 
     return (
         <div className="h-full rounded-tr bg-gray-900">
