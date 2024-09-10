@@ -33,8 +33,8 @@ const Status = () => {
             </div>
           </div>
         </div>
-        <div className=' w-full h-[570px]'>
-          <img src={GIF} className='w-full h-full' onClick={notify}></img>
+        <div className=' w-full h-[570px] content-center'>
+          <img src={GIF} className='m-auto h-[500px]' onClick={notify}></img>
         </div>
         <div className='bg-white w-full h-[250px]'>
           <div className='bg-gray-200 w-[1570px] h-full m-auto pl-4'>
