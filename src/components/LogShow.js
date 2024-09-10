@@ -42,22 +42,20 @@ const LogShow = () => {
     }, []);
 
     return (
-        <div>
-            <div className='flex h-8 align-bottom text-center border-t-4'>
-                <div className='text-[15px] leading-[25px] w-[160px] ml-2'>Date</div>
-                <div className='text-[15px] leading-[25px] w-[160px]'>NC</div>
-                <div className='text-[15px] leading-[25px] w-[160px]'>IP</div>
-                {/* <div className='text-[15px] leading-[25px] w-[520px]'>Vulnable Content</div> */}
-                <div className='text-[15px] leading-[25px] w-[420px]'>Payload</div>
+        <div className='overflow-auto'>
+            <div className='align-bottom text-center border-t-4'>
+                <span className='inline-block text-[15px] leading-[25px] w-[160px] ml-2'>Date</span>
+                <span className='inline-block text-[15px] leading-[25px] w-[160px]'>NC</span>
+                <span className='inline-block text-[15px] leading-[25px] w-[160px]'>IP</span>
+                <span className='inline-block text-[15px] leading-[25px] w-[420px]'>Payload</span>
             </div>
-            <div className='h-max overflow-auto'>
+            <div className='overflow-auto w-full h-[230px]'>
                 {logList.map((log, index) => (
-                    <div key={index} className={`${index % 2 === 0 ? 'bg-gray-300' : 'bg-white'} w-full h-5 flex align-bottom text-center`}>
-                        <div className='text-[15px] w-[160px] ml-2'>{log.date}</div>
-                        <div className='text-[15px] w-[160px]'>{log.nc}</div>
-                        <div className='text-[15px] w-[160px]'>{log.ip}</div>
-                        {/* <div className='text-[15px] w-[520px]'>{log.vulnerability}</div> */}
-                        <div className='text-[15px] w-[420px]'>{log.payload}</div>
+                    <div key={index} className={`${index % 2 === 0 ? 'bg-gray-300' : 'bg-white'} w-full h-5 align-bottom text-center`}>
+                        <span className='inline-block text-[15px] w-[160px] ml-2'>{log.date}</span>
+                        <span className='inline-block text-[15px] w-[160px]'>{log.nc}</span>
+                        <span className='inline-block text-[15px] w-[160px]'>{log.ip}</span>
+                        <span className='inline-block text-[15px] w-[420px]'>{log.payload}</span>
                     </div>
                 ))}
             </div>

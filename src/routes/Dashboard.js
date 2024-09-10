@@ -6,6 +6,7 @@ import WorldMap3 from "../components/WorldMap3";
 import DoughnutChart2 from '../components/DoughnutChart2';
 import StictChart from '../components/StictChart';
 import LogShow from '../components/LogShow';
+import StatusChart from "../components/StatusChart";
 
 function Dashboard() {
   let mapArray = [true, false];
@@ -52,11 +53,16 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className='bg-white w-[1000px] h-max mt-3'>
-        <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Threat</p></div>
-        <LogShow />
+      <div className='flex h-80 w-full mt-3'>
+        <div className='bg-white w-[1000px]'>
+          <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Threat</p></div>
+          <LogShow />
+        </div>
+        <div className='bg-white w-[600px] ml-3'>
+          <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Log</p></div>
+          <StatusChart />
+        </div>
       </div>
-
     </div>
   )
 }
