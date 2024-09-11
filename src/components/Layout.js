@@ -1,6 +1,7 @@
-import React from 'react'
 import Header from './Header'
+// import NotificationProvider from './alert/NotificationContents'
 
+import React from 'react';
 
 function Layout({ children }){
   return (
@@ -9,7 +10,9 @@ function Layout({ children }){
             <Header/>
         </div>
         <div className='w-full h-full p-4'>
-            { children }
+          {/* <NotificationProvider> */}
+          {children}
+          {/* </NotificationProvider> */}
         </div>
     </div>
   )
