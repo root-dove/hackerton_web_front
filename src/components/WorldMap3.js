@@ -32,35 +32,28 @@ const WorldMap = () => {
           specularRatio: 0.1,
         },
       })
-    // .animate(true);
-
-    const atomLayer = new EarthLayer().color('#2E8AE6').shape('atomSphere');
-
-    const bloomLayer = new EarthLayer().color('#fff').shape('bloomSphere').style({
-      opacity: 0.7,
-    });
+      .animate({
+        enable: true,
+      });
 
     scene.on('loaded', () => {
       scene.addLayer(earthlayer);
-      scene.addLayer(atomLayer);
-      scene.addLayer(bloomLayer);
+      // scene.addLayer(atomLayer);
+      // scene.addLayer(bloomLayer);
 
-      fetch('https://gw.alipayobjects.com/os/bmw-prod/20a69b46-3d6d-4ab5-b8b5-150b6aa52c88.json')
-        .then((res) => res.json())
-        .then((flydata) => {
-          // invert coord
-          flydata = flydata.map((item) => {
-            return {
-              coord: [
-                item.coord[1], item.coord[0]
-              ],
-            };
-          });
+      fetch('/attackData.txt')
+        .then((res) => res.text())
+        .then((data) => {
+          const realData = data;
+          data = data.split('\n').filter((line, index) => index === 0 || Math.random() > 0.90).join('\n');
           const flyLine = new LineLayer({ blend: 'normal' })
-            .source(flydata, {
+            .source(data, {
               parser: {
-                type: 'json',
-                coordinates: 'coord',
+                type: 'csv',
+                x: 'lng1',
+                y: 'lat1',
+                x1: 'lng2',
+                y1: 'lat2',
               },
             })
             .color('#ff0000aa')
@@ -76,6 +69,9 @@ const WorldMap = () => {
               segmentNumber: 60,
               globalArcHeight: 20,
             });
+          setInterval(() => {
+            flyLine.setData(realData.split('\n').filter((line, index) => index === 0 || Math.random() > 0.90).join('\n'));
+          }, 60000);
           scene.addLayer(flyLine);
         });
 
