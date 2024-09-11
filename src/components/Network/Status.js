@@ -38,7 +38,7 @@ const Status = () => {
             <div className='absolute bg-[url("./img/cloud.png")] w-[150px] h-[180px] top-[200px] left-[110px]' />
           </div>
           <div className='h-full w-[100px] '>
-            <div className='absolute bg-[url("./img/wifi.png")] w-[80px] h-[80px] top-[230px] ' />
+            
           </div>
           <div className='h-full w-[1150px]'>
             <div className='w-full h-[50px]'></div>
@@ -60,7 +60,7 @@ const Status = () => {
             </div>
             <div className='w-full h-[75px] border-l-[12px] border-blue-950 flex'>
               <div className='h-full w-[330px] border-b-[12px] border-b-green-400 relative'>
-                <div className='absolute bg-[url("./img/server.png")] w-[100px] h-[105px] top-[15px] right-[290px]' />
+                
               </div>
               <div className='h-full w-[200px] border-b-[12px] border-b-green-400 relative'>
                 <div className='absolute bg-[url("./img/pc.png")] w-[106px] h-[105px] bottom-[-50px] right-[165px] bg-white' />
@@ -68,6 +68,8 @@ const Status = () => {
               </div>
             </div>
             <div className='w-full h-[75px] border-l-[12px] border-green-400 relative'>
+              <div className='absolute bg-[url("./img/server.png")] w-[90px] h-[105px] top-[-60px] left-[-60px] bg-white' />
+              <div className='absolute bg-[url("./img/wifi.png")] w-[80px] h-[80px] top-[-50px] left-[-120px]' />
               <div className='absolute bg-[url("./img/switch.png")] w-[120px] h-[105px] top-[-60px] left-[50px]' />
             </div>
             <div className='w-full h-[150px] flex'>
