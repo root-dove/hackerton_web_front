@@ -18,7 +18,7 @@ import AdminPage from './routes/setting/AdminPage';
 function App(){ 
   
   return (
-    <>
+    <div className='overflow-hidden'>
       <Routes>
         <Route path='/' element={<Layout>
             <Dashboard/>
@@ -46,7 +46,7 @@ function App(){
         pauseOnHover
       />
       <AutoToastNotification />
-    </>
+    </div>
   );
 }
 export default App;

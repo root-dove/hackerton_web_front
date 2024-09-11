@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import user from "../../data/users/users.json"
+import initialUsers from "../../data/users/users.json";
 
 const UserManagement = () => {
-  const [users, setUsers] = useState(user);
+  const [users, setUsers] = useState(initialUsers);
 
   const [newUser, setNewUser] = useState({ name: '', email: '' });
 
   const handleAddUser = () => {
     const newUserId = users.length ? users[users.length - 1].id + 1 : 1;
-    setUsers([...users, { id: newUserId, ...newUser }]);
-    setNewUser({ name: '', email: '' });
+    const updatedUsers = [...users, { id: newUserId, ...newUser }];
+    setUsers(updatedUsers);
+    setNewUser({ name: '', email: '' }); 
   };
 
   const handleDeleteUser = (id) => {
-    setUsers(users.filter(user => user.id !== id));
+    const updatedUsers = users.filter(user => user.id !== id);
+    setUsers(updatedUsers);
   };
 
   return (

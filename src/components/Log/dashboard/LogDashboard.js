@@ -101,7 +101,7 @@ const LogDashboard = () => {
             />
           </div>
           <div className="w-full h-60 flex justify-center items-center">
-            <Doughnut
+            <Bar
               data={protocolData}
               options={{
                 responsive: true,
@@ -111,11 +111,12 @@ const LogDashboard = () => {
           </div>
         </div>
 
-        <div className="bg-white p-4 shadow rounded flex-grow" style={{ flexBasis: '60%', maxWidth: '60%' }}>
+        <div className="bg-white p-4 shadow rounded flex-grow h-108">
           <Line
             data={lineData}
             options={{
               responsive: true,
+              maintainAspectRatio: false,
               plugins: { legend: { position: 'top' } },
             }}
           />

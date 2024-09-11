@@ -129,8 +129,8 @@ const SystemStatusMonitor = () => {
         </div>
       </div>
 
-      <div className="bg-white p-4 shadow rounded">
-        <Line data={lineData} options={{ responsive: true, plugins: { legend: { position: 'top' } } }} />
+      <div className="bg-white p-4 shadow rounded h-60">
+        <Line data={lineData} options={{ responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } } }} />
       </div>
     </div>
   );
