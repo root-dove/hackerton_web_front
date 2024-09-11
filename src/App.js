@@ -35,7 +35,7 @@ function App(){
         <Route path='/Setting/Admin' element={<Layout><AdminPage/></Layout>}/>
       </Routes>
       <ToastContainer
-        position="bottom-right" // 위치 설정
+        position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

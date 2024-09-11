@@ -2,7 +2,7 @@ import React from 'react';
 import LogStatistics from './LogStatistics';
 import StorageAndMemoryStats from './StorageAndMemoryStats';
 import logs from '../../../data/Logs/allLogs.json';
-import { Line, Bar, Doughnut } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement } from 'chart.js';
 import ResourceUsageChart from './ResourceUsageChart';
 
@@ -18,6 +18,26 @@ ChartJS.register(
   LineElement
 );
 
+const getLogCountsByTime = (logs) => {
+  const logCounts = logs.reduce((acc, log) => {
+    try {
+      const date = new Date(log.timestamp);
+      if (isNaN(date.getTime())) throw new Error("Invalid Date");
+
+      const time = date.toISOString().slice(11, 16);
+      acc[time] = (acc[time] || 0) + 1;
+    } catch (error) {
+      console.error("Error processing timestamp:", log.timestamp, error);
+    }
+    return acc;
+  }, {});
+
+  const labels = Object.keys(logCounts);
+  const data = Object.values(logCounts);
+
+  return { labels, data };
+};
+
 const LogDashboard = () => {
   const totalLogs = logs.length;
 
@@ -31,12 +51,8 @@ const LogDashboard = () => {
     return acc;
   }, {});
 
-  const lineChartData = logs.map((log, index) => ({
-    x: index,
-    y: log.id, // 예를 들어 로그의 id를 시퀀스화하여 사용 (실제 시간 데이터를 사용할 수 있음)
-  }));
+  const { labels: lineChartLabels, data: lineChartData } = getLogCountsByTime(logs);
 
-  // 데이터 설정
   const trafficData = {
     labels: Object.keys(trafficTypesCount),
     datasets: [
@@ -60,15 +76,40 @@ const LogDashboard = () => {
   };
 
   const lineData = {
-    labels: lineChartData.map((data) => data.x),
+    labels: lineChartLabels,
     datasets: [
       {
-        label: '시간에 따른 로그 발생 수',
-        data: lineChartData.map((data) => data.y),
-        borderColor: '#36A2EB',
+        label: 'Log Count',
+        data: lineChartData,
         fill: false,
+        borderColor: 'rgba(75,192,192,1)',
+        tension: 0.1,
       },
     ],
+  };
+
+  const options = {
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Time',
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Log Count',
+        },
+        beginAtZero: true,
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+      },
+    },
   };
 
   const storageUsage = 120;
@@ -114,11 +155,7 @@ const LogDashboard = () => {
         <div className="bg-white p-4 shadow rounded flex-grow h-108">
           <Line
             data={lineData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: { legend: { position: 'top' } },
-            }}
+            options={options}
           />
         </div>
       </div>
