@@ -14,8 +14,9 @@ const DoughnutChart2 = () => {
                 height = chart.height,
                 ctx = chart.ctx;
             ctx.restore();
-            var fontSize = (height / 200).toFixed(2);
-            ctx.font = fontSize + "em sans-serif";
+            var fontSize = (height / 100).toFixed(2);
+            ctx.font = `700 ${fontSize}em sans-serif`;
+            ctx.fillStyle = "#404040";
             ctx.textBaseline = "top";
             // find largest value
             let largestValue = 0, total = 0;

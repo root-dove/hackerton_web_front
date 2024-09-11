@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Header() {
-
     let menuArray = [true, false, false];
     const [menu, setMenu] = useState(menuArray);
     const [show, setShow] = useState(true);
@@ -11,9 +12,17 @@ export default function Header() {
         newArr[props] = !newArr[props];
         setMenu(newArr);
     }
+    
 
     return (
         <div className="h-full rounded-tr bg-gray-900">
+            <ToastContainer 
+                position="bottom-right"
+                closeButton={false}
+                hideProgressBar
+                closeOnClick
+                theme="dark"
+            />
             <div className="xl:hidden flex justify-between w-full p-6 items-center ">
                 <div className="flex justify-between  items-center space-x-3">
                     <svg width={34} height={34} viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">

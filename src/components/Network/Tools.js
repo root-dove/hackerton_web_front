@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const Tools = () => {
+
+function Tools(){
+  
+
   return (
-    <div>Tools</div>
-  )
+    <div>
+      test
+    </div>
+  );
 }
-
-export default Tools
+  
+export default Tools;

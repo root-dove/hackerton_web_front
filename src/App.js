@@ -6,7 +6,7 @@ import LogPage from './routes/network/LogPage';
 import LogAllPage from './routes/network/LogAllPage';
 import Dashboard from './routes/Dashboard';
 import PolicyList from './components/Policy/PolicyList';
-import Rule from './components/Policy/Rule';
+import AddPolicy from './components/Policy/AddPolicy'
 import Status from './components/Network/Status';
 import Tools from './components/Network/Tools';
 // import NotificationProvider from './components/alert/NotificationContents'; // 내가 만든거 
@@ -26,8 +26,8 @@ function App(){
         <Route path='/log' element={<Layout><LogPage/></Layout>}/>
         <Route path='/logAll' element={<Layout><LogAllPage/></Layout>}/>
 
-        <Route path='/Policy/PolicyList' element={<Layout><PolicyList/></Layout>}/>
-        <Route path='/Policy/Rule' element={<Layout><Rule/></Layout>}/>
+      <Route path='/Policy/PolicyList' element={<Layout><PolicyList/></Layout>}/>
+      <Route path='/Policy/AddPolicy' element={<Layout><AddPolicy/></Layout>}/>
 
         <Route path='/Network/Status' element={<Layout><Status/></Layout>}/>
         <Route path='/Network/Tools' element={<Layout><Tools/></Layout>}/>
