@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 
 const LogShow = () => {
     const [logList, setLogList] = useState([]);
-
+    const contryList = ['KR', 'CN', 'RU', 'JP', 'US', 'IN', 'DE', 'GB', 'FR', 'BR', 'IT', 'CA', 'AU', 'ES', 'MX', 'ID', 'TR', 'SA', 'PL', 'AR', 'UA', 'IR', 'TH', 'EG', 'NL', 'BD', 'PH', 'PK', 'VN', 'NG', 'KR', 'CN', 'RU', 'JP', 'US', 'IN', 'DE', 'GB', 'FR', 'BR', 'IT', 'CA', 'AU', 'ES', 'MX', 'ID', 'TR', 'SA', 'PL', 'AR', 'UA', 'IR', 'TH', 'EG', 'NL', 'BD', 'PH', 'PK', 'VN', 'NG'];
     const generateRandomLog = () => {
         // YY-MM-DD HH:MM:SS.ms
         const date = new Date().toISOString().slice(0, 19).replace('T', ' ').slice(2) + '.' + String((new Date().getMilliseconds() + Math.floor(Math.random() * 100)) % 1000).padStart(3, '0');
-        const nc = Math.random() < 0.2 ? 'KR' : 'CN';
+        const nc = contryList[Math.floor(Math.random() * contryList.length)];
         const ip = `${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
         // const vulnerability = Math.random() < 0.5 ? `CVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}` : `KVE-${new Date().getFullYear() - Math.floor(Math.random() * 10)}-${Math.floor(Math.random() * 10000)}`;
         const randomPayloads = [
@@ -37,7 +37,7 @@ const LogShow = () => {
     }
 
     useEffect(() => {
-        const interval = setInterval(addRandomLog, 100);
+        const interval = setInterval(addRandomLog, 200);
         return () => clearInterval(interval);
     }, []);
 
