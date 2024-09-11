@@ -8,6 +8,7 @@ import Dashboard from './routes/Dashboard';
 import PolicyList from './components/Policy/PolicyList';
 import AddPolicy from './components/Policy/AddPolicy'
 import Status from './components/Network/Status';
+import Status2 from './components/Network/Status copy';
 import Tools from './components/Network/Tools';
 // import NotificationProvider from './components/alert/NotificationContents'; // 내가 만든거 
 import AutoToastNotification from './components/alert/AutoToastNotification';
@@ -26,11 +27,11 @@ function App(){
         <Route path='/log' element={<Layout><LogPage/></Layout>}/>
         <Route path='/logAll' element={<Layout><LogAllPage/></Layout>}/>
 
-      <Route path='/Policy/PolicyList' element={<Layout><PolicyList/></Layout>}/>
-      <Route path='/Policy/AddPolicy' element={<Layout><AddPolicy/></Layout>}/>
+        <Route path='/Policy/PolicyList' element={<Layout><PolicyList/></Layout>}/>
+        <Route path='/Policy/AddPolicy' element={<Layout><AddPolicy/></Layout>}/>
 
         <Route path='/Network/Status' element={<Layout><Status/></Layout>}/>
-        <Route path='/Network/Tools' element={<Layout><Tools/></Layout>}/>
+        <Route path='/Network/Tools' element={<Layout><Status2/></Layout>}/>
         
         <Route path='/Setting/Admin' element={<Layout><AdminPage/></Layout>}/>
       </Routes>

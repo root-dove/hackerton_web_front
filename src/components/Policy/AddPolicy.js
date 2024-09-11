@@ -40,7 +40,7 @@ const PolicyItem=(props)=>{
     )
 }
 
-const PolicyList = () => {
+const AddPolicy = () => {
     return (
         <>
         <div className='w-full h-full bg-white p-5'>
@@ -177,4 +177,4 @@ const PolicyList = () => {
     )
 }
 
-export default PolicyList
+export default AddPolicy
