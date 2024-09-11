@@ -56,7 +56,7 @@ function Dashboard() {
           <LogShow />
         </div>
         <div className='bg-white w-[600px] ml-3'>
-          <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Real-Time Log</p></div>
+          <div className='w-auto h-8 font-bold bo ml-7 mt-4 text-2xl block'><p>Statics</p></div>
           <StatusChart />
         </div>
       </div>
