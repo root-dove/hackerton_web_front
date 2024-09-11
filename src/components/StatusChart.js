@@ -11,6 +11,7 @@ const StatusChart = () => {
         setData(data);
         const interval = setInterval(() => {
             data = data + Math.floor(Math.random() * 100) / 10 - 2;
+            if(data < 0) data = 0;
             setData(data.toFixed(1));
         }, 1000);
 
@@ -18,25 +19,27 @@ const StatusChart = () => {
     }, []);
 
     return (
-        <div className='w-full m-auto'>
-            <div className='dataCard'>
+        <div className='w-full h-[272px]'>
+            <div className='ml-6 mr-6 h-[260px] text-gray-700'>
                 <div className='grid grid-cols-2 grid-rows-2 gap-4 h-full w-full'>
-                    <div className='row-span-2 align-middle h-full'>
-                        <div>
-                            <div className='text-2xl font-bold'>Detected Threats(24h)</div>
-                            <div className='text-4xl font-bold'>{data}K</div>
+                    <div className='row-span-2 align-middle h-full bg-gray-200 rounded-lg'>
+                        <div className='ml-5 mt-5 mr-1'>
+                            <div className='text-2xl text-gray-400'>Detected(24h)</div>
+                            <div className='h-[200px] flex'>
+                                <div className='text-6xl font-bold m-auto ml-0'>{data}K</div>
+                            </div>
                         </div>
                     </div>
-                    <div className='h-full'>
-                        <div>
-                            <div className='text-2xl font-bold'>Possible Attacks</div>
-                            <div className='text-4xl font-bold'>10</div>
+                    <div className='h-full bg-gray-200 rounded-lg'>
+                        <div className='ml-5 mt-5 mr-1'>
+                            <div className='text-2xl text-gray-400'>Possible Attacks</div>
+                            <div className='text-5xl font-bold mt-2'>10</div>
                         </div>
                     </div>
-                    <div className='col-start-2 row-start-2 h-full'>
-                        <div>
-                            <div className='text-2xl font-bold'>Temporarily Blocked</div>
-                            <div className='text-4xl font-bold'>5</div>
+                    <div className='col-start-2 row-start-2 h-full bg-gray-200 rounded-lg'>
+                        <div className='ml-5 mt-5 mr-1'>
+                            <div className='text-2xl text-gray-400'>Temporarily Blocked</div>
+                            <div className='text-5xl font-bold mt-2'>5</div>
                         </div>
                     </div>
                 </div>
