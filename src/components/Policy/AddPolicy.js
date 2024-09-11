@@ -200,8 +200,4 @@ const PolicyList = () => {
     );
 };
 
-<<<<<<< HEAD
-export default AddPolicy
-=======
 export default PolicyList;
->>>>>>> a8badc853ee6d1bc6480dd6de3471f451f2c756b
