@@ -37,13 +37,20 @@ const PermissionSettings = () => {
 
   return (
     <>
-        <div className="p-4 bg-white shadow-md rounded-lg">
+      <div className="p-4 bg-white shadow-md rounded-lg">
         <h1 className="text-2xl font-bold mb-4">권한 설정</h1>
 
         {users.map((user) => (
             <div key={user.id} className="mb-6">
-            <h2 className="text-xl font-semibold mb-2">{user.name} ({user.email})</h2>
-
+              <div className=' flex items-center justify-between'>
+                <h2 className="text-xl font-semibold mb-2">{user.name} ({user.email})</h2>
+                <button
+                    onClick={() => handleSavePermissions(user.id)}
+                    className="bg-blue-500 text-white p-2 rounded"
+                >
+                    권한 저장
+                </button>
+              </div>
             <div className="flex gap-4 mb-4">
                 {permissions.map((permission) => (
                 <label key={permission} className="inline-flex items-center">
@@ -58,12 +65,6 @@ const PermissionSettings = () => {
                 ))}
             </div>
 
-            <button
-                onClick={() => handleSavePermissions(user.id)}
-                className="bg-blue-500 text-white p-2 rounded"
-            >
-                권한 저장
-            </button>
             </div>
         ))}
         </div>

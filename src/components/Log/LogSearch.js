@@ -11,6 +11,9 @@ const LogSearch = () => {
   });
 
   const handleSearch = () => {
+    toast.error('이걸 원해?',{
+      theme: "colored"
+    })
     console.log('검색 실행', searchTerm, filterOptions);
   };
 
@@ -31,6 +34,9 @@ const LogSearch = () => {
   const save = () => {
     toast.info('해주겠니?')
   }
+
+
+
   return (
     <div className="p-4 bg-white shadow-md rounded-lg">
       <div className="flex justify-between items-center mb-4">

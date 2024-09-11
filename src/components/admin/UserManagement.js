@@ -19,11 +19,20 @@ const UserManagement = () => {
   };
 
   return (
-    <div className="p-4 bg-white shadow-md rounded-lg">
+    <div className="p-4 bg-white shadow-md rounded-lg overflow-y-auto">
       <h1 className="text-2xl font-bold mb-4">사용자 관리</h1>
 
       <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-2">사용자 추가</h2>
+        <div className=' flex items-center justify-between'>
+          <h2 className="text-xl font-semibold mb-2">사용자 추가</h2>
+          <button
+            onClick={handleAddUser}
+            className="bg-blue-500 text-white p-1 rounded w-20"
+          >
+            추가
+          </button>
+        </div>
+        
         <input
           type="text"
           placeholder="이름"
@@ -38,12 +47,6 @@ const UserManagement = () => {
           onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
           className="border p-2 mb-2 w-full"
         />
-        <button
-          onClick={handleAddUser}
-          className="bg-blue-500 text-white p-2 rounded"
-        >
-          추가
-        </button>
       </div>
 
       <div>

@@ -10,5 +10,12 @@
         "name": "김철수", 
         "email": "kim@example.com", 
         "permissions": [] 
+    },
+    
+    { 
+        "id": 3, 
+        "name": "어드민인데여?", 
+        "email": "ADMIN@example.com", 
+        "permissions": [] 
     }
 ]

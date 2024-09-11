@@ -5,7 +5,7 @@ import SystemStatusMonitor from '../../components/admin/SystemStatusMonitor';
 
 const AdminPage = () => {
   return (
-    <div className='h-screen overflow-y-auto'>
+    <div className='h-screen '>
         <div className='flex-grow-1'>
             <div className="grid grid-cols-2 gap-4">
                 <UserManagement />

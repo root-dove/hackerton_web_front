@@ -17,7 +17,6 @@ const SystemStatusMonitor = () => {
   const [memoryUsage, setMemoryUsage] = useState(0);
   const [diskUsage, setDiskUsage] = useState(0);
 
-  // 더미 데이터 업데이트 함수 (실제 API 호출로 대체 가능)
   const fetchSystemData = () => {
     setCpuUsage(Math.random() * 100); // 0~100 사이의 랜덤 값
     setMemoryUsage(Math.random() * 100); // 0~100 사이의 랜덤 값
@@ -25,7 +24,6 @@ const SystemStatusMonitor = () => {
   };
 
   useEffect(() => {
-    // 10초마다 데이터 업데이트
     const interval = setInterval(fetchSystemData, 10000);
     return () => clearInterval(interval);
   }, []);
